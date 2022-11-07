@@ -1,0 +1,24 @@
+{
+    "huonenimi": "Bussi Myllypuroon",
+    "huoneNro": 15,
+    "huoneteksti": "Bussimatkat pääkaupunkiseudulla ovat aina samanlaisia. Kolme rääkyvää vauvaa, kaksi tai enemmän örveltäjää ja loput ovatkin hiljaisia kulkijoita. Tuoksukin on erittäin hermeettinen. Toivot sydämesi kyllyydestä, että lipuntarkastaja ei nouse tähän bussiin.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": null,
+    "etela": null,
+    "lansi": {
+        "huoneeseen": 10,
+        "avain": null
+    },
+    "vastustaja": {
+        "nimi": "Lipuntarkastaja",
+        "teksti": "Voi pahus! Tarkastaja astui bussiin sisälle, ja astelee luoksesi.",
+        "voittoviesti": "Pääsit karkuun!",
+        "tappioviesti": "Lipuntarkastaja sai sinut kiinni, menetit 80 pistettä.",
+        "pisteet": 20,
+        "hp": 15,
+        "voittoraja": 15
+    },
+    "avain": null,
+    "esine": null
+}

@@ -1,0 +1,34 @@
+{
+    "huonenimi": "Malmi",
+    "huoneNro": 3,
+    "huoneteksti": "Pääsit pahamaineiselle Malmin teollisuusalueelle, Tattarisuolle. Ympärilläsi on varsin hiljaista. Uskot hiljaisuuden tuovan itsellesi lisää voimaa. Voit jatkaa matkaasi takaisin keskustaan, tai Tikkurilaan.",
+    "huonehp": {
+        "hp": 5,
+        "tekstit": {
+            "vaikutus": "Hiljaisuus voimaannuttaa sinua!",
+            "loppu": "Nyt ympärillä vilisee jo autoja. Hiljaisuus on kadonnut."
+        },
+        "toistoLkm": 3
+    },
+    "pohjoinen": {
+        "huoneeseen": 4,
+        "avain": null
+    },
+    "ita": null,
+    "etela": {
+        "huoneeseen": 2,
+        "avain": null
+    },
+    "lansi": null,
+    "avain": null,
+    "vastustaja": {
+        "nimi": "Malmin Matrix",
+        "teksti": "Liiallinen hiljaisuus ei ole koskaan hyvä merkki. Tunnet selkärangassasi jonkun olevan takanasi. Käännyt katsomaan, ja näet Malmin Matrixin.",
+        "voittoviesti": "Väistäppä tämä! Voitit Matrixin. Hän tuskin enää palaa.",
+        "tappioviesti": "Voi ei. Matrix väisteli iskusi liian tehokkaasti. Voit yrittää uudestaan.",
+        "pisteet": 20,
+        "hp": 10,
+        "voittoraja": 20
+    },
+    "esine": null
+}

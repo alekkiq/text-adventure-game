@@ -1,0 +1,30 @@
+{
+    "huonenimi": "Kannelmäki",
+    "huoneNro": 9,
+    "huoneteksti": "Oi Kannelmäki. Täällä on aina niin hiljaista - Liian hiljaista. Tämä on varmasti kolkoin juna-asema mitä olet eläessäsi nähnyt. Voit jatkaa matkaasi junalla Leppävaaraan.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": null,
+    "etela": {
+        "huoneeseen": 11,
+        "avain": null
+    },
+    "lansi": null,
+    "vastustaja": {
+        "nimi": "Rosvo",
+        "teksti": "Epäilyttävän oloinen henkilö lähestyy sinua, kenties rosvo.",
+        "voittoviesti": "Voitit rosvon! Niitä on täällä ilmeisesti vaikka muille jakaa. Rosvo pudotti mielenkiintoisen paperinpalan.",
+        "tappioviesti": "Voi pahus. Rosvo voitti ja karkasi paikalta.",
+        "pisteet": 20,
+        "hp": 20,
+        "voittoraja": 15
+    },
+    "avain": null,
+    "esine": {
+        "nimi": "Kaukolippu 4/4",
+        "teksti": "Nostatko paperinpalan?",
+        "vaikutus": "Paperi paljastuikin kaukolipun 4. palaksi!",
+        "pisteet": 25,
+        "hp": 0
+    }
+}

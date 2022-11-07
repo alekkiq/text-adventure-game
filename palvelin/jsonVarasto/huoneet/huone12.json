@@ -1,0 +1,22 @@
+{
+    "huonenimi": "Itäkeskus",
+    "huoneNro": 12,
+    "huoneteksti": "Saavut Itäkeskukseen. Sinulla on omat ennakkoluulot tästäkin paikasta, mutta uskot selviytyväsi hengissä. Ympäristösi on kuitenkin hyvin identtinen aiempien paikkojen kanssa, metelin määrä poisluettuna. Täältä et pääse muualle kuin keskustaan.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": null,
+    "etela": null,
+    "lansi": {
+        "huoneeseen": 2,
+        "avain": null
+    },
+    "vastustaja": null,
+    "avain": null,
+    "esine": {
+        "nimi": "Kaukolippu 1/4",
+        "teksti": "Näet lattialla paperinpalan. Nostatko sen?",
+        "vaikutus": "Paperi paljastuikin kaukolipun 1. palaksi!",
+        "pisteet": 25,
+        "hp": 0
+    }
+}

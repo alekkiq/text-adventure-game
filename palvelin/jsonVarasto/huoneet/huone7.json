@@ -1,0 +1,31 @@
+{
+    "huonenimi": "Myyrmäki",
+    "huoneNro": 7,
+    "huoneteksti": "Harvat valitsevat Myyrmäen reitikseen, mutta erilaisuus on rikkaus? Ympärilläsi näet kaikenmaailman avohoitopotilaita sekä huumeiden ongelmakäyttäjiä.",
+    "huonehp": {
+        "hp": -10,
+        "tekstit": {
+            "vaikutus": "Haju täällä on niin karmea, että terveytesi heikkenee.",
+            "loppu": "Haju on poissa!"
+        },
+        "toistoLkm": 7
+    },
+    "pohjoinen": null,
+    "ita": null,
+    "etela": {
+        "huoneeseen": 9,
+        "avain": null
+    },
+    "lansi": null,
+    "vastustaja": {
+        "nimi": "Myyrmäen rölli",
+        "teksti": "Tälle hajulle on oltava jokin syy. Seuraat löyhkää parkkipaikalle ja näet jonkinlaisen olennon. Sehän on Myyrmäen rölli! Sen on oltava hajun lähde! Jos voitat hänet, kenties haju katoaa?",
+        "voittoviesti": "Voitit röllin! Haju ei kadonnut kokonaan, mutta selvästi lieventyi. Ehkä se hälvenee kokonaan ajan kanssa.",
+        "tappioviesti": "Jäit toiseksi taistelussa röllille. Terveytesi heikkeni.",
+        "pisteet": 20,
+        "hp": 40,
+        "voittoraja": 10
+    },
+    "avain": null,
+    "esine": null
+}

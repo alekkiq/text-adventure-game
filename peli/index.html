@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tekstiseikkailu</title>
+    <meta charset="UTF-8">
+    <link href="./styles/tyylit.css" rel="stylesheet" />
+    <script src="./taso.js"></script>
+    <script src="./peli.js"></script>
+    <script src="./kayttoliittyma.js"></script>
+
+    <link href="//db.onlinewebfonts.com/c/96326733fb4665a821d9fc7a295a750c?family=Korolev+Bold" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body id="huone">
+    <main>
+        <h1>
+            <span id="pisteotsikko">Pisteet:</span> <span id="pisteet">0</span>&nbsp; <span id="hpotsikko">HP:</span>
+            <span id="hp">0</span>
+
+        </h1>
+
+        <h2>
+            <span id="kyltti"></span>&nbsp;
+        </h2>
+
+        <div id="pelialue">
+            <button id="pohjoinen">Pohjoinen</button>
+            <div id="keskirivi">
+                <button id="lansi">Länsi</button>
+                <p id="huoneentaulu">Ohjelmassa tapahtui virhe!</p>
+                <button id="ita">Itä</button>
+            </div>
+            <button id="etela">Etelä</button>
+        </div>
+        <section id="valinnat">
+        </section>
+        <button id="uusiPeli">Aloita uusi peli</button>
+        <div id="kuva"></div>
+    </main>
+    <footer>Pelimoottori &copy; Leila Hökki<br>
+        Tarina &copy; <span id="tekijat"></span></footer>
+</body>
+
+</html>

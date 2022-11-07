@@ -1,0 +1,22 @@
+{
+    "huonenimi": "Kontula",
+    "huoneNro": 8,
+    "huoneteksti": "Valitsit reitiksesi Kontulan. Saavut Kontulan aukiolle. Katutaide loistaa ja linnut laulaa. Huumeruiskut siellä täällä eivät masenna mieltäsi. Et voi palata Tikkurilaan, vaan sinun on jatkettava Myllypuroon.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": null,
+    "etela": {
+        "huoneeseen": 10,
+        "avain": null
+    },
+    "lansi": null,
+    "avain": null,
+    "vastustaja": null,
+    "esine": {
+        "nimi": "seteli",
+        "teksti": "Huomaat ilmassa leijailevan harmaan paperin. Katsottuasi tarkemmin, huomaat, että se onkin 5 euron seteli!",
+        "vaikutus": "Ilmainen raha saa aina hymyn huulille. Ansaitsit 100 pistettä lisää!",
+        "pisteet": 100,
+        "hp": 0
+    }
+}

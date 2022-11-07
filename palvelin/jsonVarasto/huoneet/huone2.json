@@ -1,0 +1,32 @@
+{
+    "huonenimi": "Junaraiteet",
+    "huoneNro": 2,
+    "huoneteksti": "Saavut aina niin ihanille Helsingin päärautatieaseman junaraiteille. Edessäsi on monia eri vaihtoehtoja jatkaa seikkailussasi. Espoo, Vantaa tai jopa kauhea Itä-Helsinki. Graffiteja jokaisella seinällä, roskia maassa ja uskot jopa näkeväsi elävän rotan. Rakennustyömaidenkin melu on kuin sotatantereella.",
+    "huonehp": null,
+    "pohjoinen": {
+        "huoneeseen": 3,
+        "avain": 1
+    },
+    "ita": {
+        "huoneeseen": 12,
+        "avain": 1
+    },
+    "etela": {
+        "huoneeseen": 1,
+        "avain": null
+    },
+    "lansi": {
+        "huoneeseen": 11,
+        "avain": 1
+    },
+    "avain": {
+        "nimi": "junalippu",
+        "numero": 1,
+        "teksti": "Näet seinään purkalla liimatun paperin palan, katsot tarkemmin ja huomaat sen olevan junalippu. Tästä on varmasti apua!",
+        "vaikutus": "Avasit mahdollisuuden liikkua muihin kaupunginosiin!",
+        "pisteet": 10,
+        "hp": 0
+    },
+    "esine": null,
+    "vastustaja": null
+}

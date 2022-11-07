@@ -1,0 +1,27 @@
+{
+    "tekijät": [
+        "Aleksi Putkonen",
+        "Hannes Pallari",
+        "Reino Anipuro"
+    ],
+    "pelaajanAlkuHP": 30,
+    "pelaajanMaksimiHP": 100,
+    "pisterajaYhdelleHplle": 50,
+    "pelinAloitushuoneenNro": 1,
+    "pelinLoppuhuoneenNro": 1,
+    "tekstit": {
+        "pohjoinen": "Pohjoinen",
+        "ita": "Itä",
+        "etela": "Etelä",
+        "lansi": "Länsi",
+        "pisteotsikko": "Pisteet:",
+        "hpotsikko": "HP:",
+        "uusiNappi": "Aloita uusi peli",
+        "voitto": "Löysit kaikki kaukolipun palaset ja palasit ehjänä steissille. Voitit pelin!",
+        "tappio": "Valitan hävisit pelin. Yritä uudelleen.",
+        "kohtaaVastustaja": "Kohtaa",
+        "otaResurssi": "Ota",
+        "kasaaKaukolippu": "Kasaa",
+        "kohtalokasVirhe": "Ohjelmassa tapahtui kohtalokas virhe. Peli loppui."
+    }
+}

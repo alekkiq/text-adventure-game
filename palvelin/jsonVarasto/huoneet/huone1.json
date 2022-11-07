@@ -1,0 +1,19 @@
+{
+    "huonenimi": "Steissi",
+    "huoneNro": 1,
+    "huoneteksti": "Tähän tilanteeseen on taas päädytty. Olet Helsingin steissillä. Ympärillä kymmenet ihmiset vilisevät kiireessään seuraavaan junaan tai bussiin, katuesittäjät soittavat harmonikkaa ja kerjäläiset heiluttelevat kuppejaan. Tyypillistä Helsingin keskustaa… Tästä alkaa suuri siis seikkailu! Tehtäväsi on löytää jonkinlainen kaukolippu ja paeta kauhealta pääkaupunkiseudulta. Jatka junaraiteille edetäksesi muihin kaupunginosiin!",
+    "huonehp": null,
+    "pohjoinen": {
+        "huoneeseen": 2,
+        "avain": null
+    },
+    "ita": null,
+    "etela": {
+        "huoneeseen": 16,
+        "avain": 2
+    },
+    "lansi": null,
+    "vastustaja": null,
+    "avain": null,
+    "esine": null
+}

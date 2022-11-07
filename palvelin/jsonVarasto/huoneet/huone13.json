@@ -1,0 +1,24 @@
+{
+    "huonenimi": "Espoon keskus",
+    "huoneNro": 13,
+    "huoneteksti": "Jos aistit Leppävaarassa poistuneesi Vantaalta, on se viimeistään nyt varmaa. Aistit ympärillä kävelevien ihmisten tulotason olevan ainakin 50% korkeampi kuin omasi. Tätä pidemmälle et pääse lipullasi, joten joudut palaamaan Leppävaaraan.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": {
+        "huoneeseen": 11,
+        "avain": null
+    },
+    "etela": null,
+    "lansi": null,
+    "vastustaja": {
+        "nimi": "Espoon spuge",
+        "teksti": "Näet täällä korkean tulotason alueella kuitenkin matkasi ensimmäisen kodittoman. Jostain syystä koet spugen uhkaavaksi.",
+        "voittoviesti": "Voitit spugen. Hän vihjaa sinulle, että yksi kaukolipun paloista sijaitsee linja-autossa.",
+        "tappioviesti": "Spugen katutappelu historia on kattava ja sen kyllä huomaa. Saat päähäsi oikein kunnolla",
+        "pisteet": 30,
+        "hp": 10,
+        "voittoraja": 5
+    },
+    "avain": null,
+    "esine": null
+}

@@ -1,0 +1,25 @@
+{
+    "huonenimi": "Korso",
+    "huoneNro": 5,
+    "huoneteksti": "Korso, tiedät kyllä mikä meininki täällä päin on. Öykkäreitä ja humalaisia joka puolella, mutta yrität selvitä täältä hengissä. Jos et viihdy, voit ottaa junan Keravalle tai Tikkurilaan.",
+    "huonehp": null,
+    "pohjoinen": {
+        "huoneeseen": 6,
+        "avain": null
+    },
+    "ita": null,
+    "etela": {
+        "huoneeseen": 4,
+        "avain": null
+    },
+    "lansi": null,
+    "vastustaja": null,
+    "avain": null,
+    "esine": {
+        "nimi": "ES",
+        "teksti": "Kurkkuasi kuivaa hiukan, näet roskiksen päällä avaamattoman tölkin, näyttää ihan ES:tä.",
+        "vaikutus": "Juot juoman ja vireytesi kasvaa räjähdysmäisesti!",
+        "pisteet": 15,
+        "hp": 10
+    }
+}

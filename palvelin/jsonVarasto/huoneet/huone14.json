@@ -1,0 +1,22 @@
+{
+    "huonenimi": "Bussi Kannelmäkeen",
+    "huoneNro": 14,
+    "huoneteksti": "Bussimatkat pääkaupunkiseudulla ovat aina samanlaisia. Kolme rääkyvää vauvaa, kaksi tai enemmän örveltäjää ja loput ovatkin hiljaisia kulkijoita. Tuoksukin on erittäin hermeettinen. Toivot sydämesi kyllyydestä, että lipuntarkastaja ei nouse tähän bussiin.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": {
+        "huoneeseen": 9,
+        "avain": null
+    },
+    "etela": null,
+    "lansi": null,
+    "vastustaja": null,
+    "avain": null,
+    "esine": {
+        "nimi": "Kaukolippu 3/4",
+        "teksti": "Satut huomaamaan penkkisi välissä ryppyisen paperin.",
+        "vaikutus": "Paperi paljastuikin kaukolipun 3. palaksi!",
+        "pisteet": 25,
+        "hp": 0
+    }
+}

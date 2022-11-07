@@ -1,0 +1,31 @@
+{
+    "huonenimi": "Tikkurila",
+    "huoneNro": 4,
+    "huoneteksti": "Rantaudut kenties Suomen törkyisimpään kauppakeskukseen, Dixiin, Tikkurilan keskukseen. Koet olosi uhatuksi, mutta et oikein tiedä miksi. Täältä on onneksi hyvät junayhteydet; Voit suunnata Korsoon, Myyrmäkeen, Kontulaan tai Malmille. ",
+    "huonehp": null,
+    "pohjoinen": {
+        "huoneeseen": 5,
+        "avain": null
+    },
+    "ita": {
+        "huoneeseen": 8,
+        "avain": null
+    },
+    "etela": {
+        "huoneeseen": 3,
+        "avain": null
+    },
+    "lansi": {
+        "huoneeseen": 7,
+        "avain": null
+    },
+    "vastustaja": null,
+    "avain": null,
+    "esine": {
+        "nimi": "Mora",
+        "teksti": "Jollain tuurilla näet kulman takana pilkottavan terän. Menet sen luokse ja huomaat sen olevan ihka aito mora! Uskot moran lisäävän itsevarmuuttasi taisteluissa!",
+        "vaikutus": "Itsevarmuutesi kasvoi runsaasti! Nostaessa sitä viilsit kuitenkin käteesi, joka heikensi terveyttäsi.",
+        "pisteet": 25,
+        "hp": -15
+    }
+}

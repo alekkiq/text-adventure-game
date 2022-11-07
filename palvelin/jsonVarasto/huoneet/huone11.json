@@ -1,0 +1,27 @@
+{
+    "huonenimi": "Leppävaara",
+    "huoneNro": 11,
+    "huoneteksti": "Leppävaara, kuin Espoon keskus, muttei kuitenkaan. Tunnet ilmassa kuitenkin poistuneesi Vantaan ja Helsingin ilmapiiristä. Ympärillä vilisee “roadmaneja”, maahanmuuttajia sekä stereotyyppisiä suomenruotsalaisia. Pääset tästä vielä syvimpään päätyyn eli Espoon keskukseen tai takaisin Helsingin keskustaan.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": {
+        "huoneeseen": 2,
+        "avain": null
+    },
+    "etela": null,
+    "lansi": {
+        "huoneeseen": 13,
+        "avain": null
+    },
+    "vastustaja": {
+        "nimi": "Leppävaaran Igbo",
+        "teksti": "Normaalin ihmisjoukon keskellä näet uhkaavan näköisen olennon, ilmeisimmin Leppävaaran igbo.",
+        "voittoviesti": "Sehän oli helppoa?",
+        "tappioviesti": "Igbon uhkaavat tanssit saavat sinut kauhusti kankeaksi ja häviät taistelun.",
+        "pisteet": 50,
+        "hp": 5,
+        "voittoraja": 0
+    },
+    "avain": null,
+    "esine": null
+}

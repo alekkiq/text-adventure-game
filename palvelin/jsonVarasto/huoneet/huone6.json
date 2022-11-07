@@ -1,0 +1,30 @@
+{
+    "huonenimi": "Kerava",
+    "huoneNro": 6,
+    "huoneteksti": "Kerava, näin Helsingin keskustasta pitkälle pääsit junalipullasi. Täältä et valitettavasti voi edetä junalla enempää pohjoiseen. Voit kuitenkin ottaa bussin Kannelmäkeen tai Myllypuroon, tai vaihtoehtoisesti siirtyä Korsoon.",
+    "huonehp": null,
+    "pohjoinen": null,
+    "ita": {
+        "huoneeseen": 15,
+        "avain": null
+    },
+    "etela": {
+        "huoneeseen": 5,
+        "avain": null
+    },
+    "lansi": {
+        "huoneeseen": 14,
+        "avain": null
+    },
+    "avain": null,
+    "vastustaja": {
+        "nimi": "Keravan Paholainen",
+        "teksti": "Edessäsi häämöttää Keravan paholainen. Olet kuullut, että sillä on tapana viedä ihmisiltä esineitä, joten haluat puolustautua.",
+        "voittoviesti": "Voitit paholaisen! Voit nyt jatkaa matkaasi myös bussilla.",
+        "tappioviesti": "Voi pahus! Paholainen vei morasi. Et voi enää käyttää sitä puolustautumiseen. Haluatko kostaa paholaiselle?",
+        "pisteet": 20,
+        "hp": 30,
+        "voittoraja": 15
+    },
+    "esine": null
+}
