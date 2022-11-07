@@ -23,17 +23,6 @@ app.get("/huoneet/:huoneNro", async (req, res) => {
     }
 });
 
-// Kaikki huoneet
-app.get("/huoneet", async (req, res) => {
-    try {
-        const data = await haeKaikkiHuoneet();
-        res.json(data);
-    }
-    catch (virhe) {
-        res.json({ virhe: virhe.message });
-    }
-})
-
 // Lisätekstit
 app.get("/tekstit", async (req, res) => {
     try {
