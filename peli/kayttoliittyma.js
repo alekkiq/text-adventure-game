@@ -14,8 +14,6 @@
     let huone;
     let kyltti;
 
-    const TASO = fetch("localhost:3000/huoneet/");
-
     document.addEventListener('DOMContentLoaded', alustaPeli);
 
     function alustaPeli() {
