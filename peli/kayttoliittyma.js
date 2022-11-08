@@ -34,7 +34,6 @@
         uusi.addEventListener('click', function () {
             location.reload();
         });
-
     }
 
     function uusiPeli() {
