@@ -1,6 +1,8 @@
+"use strict";
+
 /* peli.js  IH 2017*/
 
-class Huonevarasto {
+/*class Huonevarasto {
     constructor(taso) {
         this.taso = taso;
         this.huoneKartta = new Map();
@@ -12,7 +14,7 @@ class Huonevarasto {
     haeHuone(nro) {
         return this.huoneKartta.get(nro);
     }
-}
+}*/
 
 class Pelaaja {
     constructor(alkuHP) {
@@ -25,11 +27,12 @@ class Pelaaja {
 }
 
 class Peli {
-    constructor() {
+    constructor(TASO) {
         this.pelaaja = new Pelaaja(TASO.pelaajanAlkuHP);
         this.peliLoppu = false;
-        this.huonevarasto = new Huonevarasto(TASO);
-        this.aktiivinenHuone = this.huonevarasto.haeHuone(TASO.pelinAloitushuoneenNro);
+        //this.huonevarasto = new Huonevarasto(TASO);
+        this.aktiivinenHuone = TASO.pelinAloitushuoneenNro;
+        //console.log(this.aktiivinenHuone);
         this.edellinenSuunta = null;
     }
     get tekijat() {
@@ -62,32 +65,36 @@ class Peli {
         };
     }
 
-    siirryHuoneeseen(suunta) {
+    async siirryHuoneeseen(suunta) {
         switch (suunta) {
             case Peli.SUUNTA.POHJOINEN:
                 if (this.aktiivinenHuone.pohjoinen !== null) {
-                    this.aktiivinenHuone = this.huonevarasto.haeHuone(this.aktiivinenHuone.pohjoinen.huoneeseen);
+                    const data = await fetch(`/huoneet/${this.aktiivinenHuone.pohjoinen.huoneeseen}`);
+                    this.aktiivinenHuone = await data.json();
                     this.edellinenSuunta = Peli.SUUNTA.ETELA;
                 }
 
                 break;
             case Peli.SUUNTA.ITA:
                 if (this.aktiivinenHuone.ita !== null) {
-                    this.aktiivinenHuone = this.huonevarasto.haeHuone(this.aktiivinenHuone.ita.huoneeseen);
+                    const data = await fetch(`/huoneet/${this.aktiivinenHuone.ita.huoneeseen}`);
+                    this.aktiivinenHuone = await data.json();
                     this.edellinenSuunta = Peli.SUUNTA.LANSI;
                 }
 
                 break;
             case Peli.SUUNTA.ETELA:
                 if (this.aktiivinenHuone.etela !== null) {
-                    this.aktiivinenHuone = this.huonevarasto.haeHuone(this.aktiivinenHuone.etela.huoneeseen);
+                    const data = await fetch(`/huoneet/${this.aktiivinenHuone.etela.huoneeseen}`);
+                    this.aktiivinenHuone = await data.json();
                     this.edellinenSuunta = Peli.SUUNTA.POHJOINEN;
                 }
 
                 break;
             case Peli.SUUNTA.LANSI:
                 if (this.aktiivinenHuone.lansi !== null) {
-                    this.aktiivinenHuone = this.huonevarasto.haeHuone(this.aktiivinenHuone.lansi.huoneeseen);
+                    const data = await fetch(`/huoneet/${this.aktiivinenHuone.lansi.huoneeseen}`);
+                    this.aktiivinenHuone = await data.json();
                     this.edellinenSuunta = Peli.SUUNTA.ITA;
                 }
             default:

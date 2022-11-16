@@ -1,6 +1,6 @@
 /* taso.js */
 
-const TASO = {
+const TASO11 = {
     "tekijät": ["Aleksi Putkonen", "Hannes Pallari", "Reino Anipuro"],
     "pelaajanAlkuHP": 30,
     "pelaajanMaksimiHP": 100,

@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
 
     let lansi;
@@ -16,7 +18,7 @@
 
     document.addEventListener('DOMContentLoaded', alustaPeli);
 
-    function alustaPeli() {
+    async function alustaPeli() {
         huoneentaulu = document.getElementById('huoneentaulu');
         lansi = document.getElementById('lansi');
         ita = document.getElementById('ita');
@@ -29,15 +31,31 @@
         uusi = document.getElementById("uusiPeli");
         huone = document.getElementById('huone');
         kyltti = document.getElementById("kyltti");
+        // fetch tekstit
+        const tekstidata = await fetch(`/tekstit`);
 
-        uusiPeli();
+        uusiPeli(await tekstidata.json());
         uusi.addEventListener('click', function () {
             location.reload();
         });
+        await haeHuone(1);
     }
 
-    function uusiPeli() {
-        peli = new Peli();
+    async function haeHuone(huoneNro) {
+        try {
+            const data = await fetch(`/huoneet/${huoneNro}`);
+            huone = await data.json();
+            if (huone) {
+                huoneentaulu.textContent = huone.huoneteksti.join('\n');
+            }
+        }
+        catch (virhe) {
+            console.log(virhe);
+        }
+    }
+
+    function uusiPeli(TASO) {
+        peli = new Peli(TASO);
         pohjoinen.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.POHJOINEN); });
         ita.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ITA); });
         etela.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ETELA); });
@@ -51,7 +69,7 @@
 
         naytaPisteet();
         naytaHp();
-        tekijat.textContent = peli.tekijat;
+        tekijat.textContent = TASO.tekijät;
 
         paivitaHuoneenTiedot(peli.haeHuoneenTiedot());
         uusi.textContent = TASO.tekstit.uusiNappi;

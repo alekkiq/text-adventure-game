@@ -9,7 +9,13 @@ const app = express();
 
 const { port, host } = require("./config.json");
 
-const { haeYksiHuone, haeHuoneTekstit, haeKaikkiHuoneet } = require("./jsonVarasto/varastoapufunktiot");
+const { haeYksiHuone, haeHuoneTekstit } = require("./palvelin/jsonVarasto/varastoapufunktiot");
+
+const indexPolku = path.join(__dirname, "index.html");
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => res.sendFile(indexPolku));
 
 // Yksi huone
 app.get("/huoneet/:huoneNro", async (req, res) => {
