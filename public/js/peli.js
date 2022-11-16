@@ -32,7 +32,6 @@ class Peli {
         this.peliLoppu = false;
         //this.huonevarasto = new Huonevarasto(TASO);
         this.aktiivinenHuone = TASO.pelinAloitushuoneenNro;
-        //console.log(this.aktiivinenHuone);
         this.edellinenSuunta = null;
     }
     get tekijat() {
