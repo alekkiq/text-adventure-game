@@ -35,7 +35,7 @@ class Peli {
         this.edellinenSuunta = null;
     }
     get tekijat() {
-        return TASO.tekijät.join(', ');
+        return this.tekijät.join(', ');
     }
     get voittoTeksti() {
         return TASO.tekstit.voitto;

@@ -34,19 +34,21 @@
         // fetch tekstit
         const tekstidata = await fetch(`/tekstit`);
 
+        await haeHuone(1);
+
         uusiPeli(await tekstidata.json());
         uusi.addEventListener('click', function () {
             location.reload();
         });
-        await haeHuone(1);
     }
 
     async function haeHuone(huoneNro) {
         try {
             const data = await fetch(`/huoneet/${huoneNro}`);
-            huone = await data.json();
-            if (huone) {
-                huoneentaulu.textContent = huone.huoneteksti.join('\n');
+            const haettuHuone = await data.json();
+            if (haettuHuone) {
+                console.log(haettuHuone.huoneteksti)
+                huoneentaulu.textContent = haettuHuone.huoneteksti;
             }
         }
         catch (virhe) {
