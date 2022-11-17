@@ -12,12 +12,8 @@ async function haeYksiHuone(huoneNro) {
     return data.huoneet.find(olio => olio.huoneNro == huoneNro);
 }
 
-async function haeKaikkiHuoneet() {
-    return await lueTiedosto(varastoTiedosto);
-}
-
 async function haeHuoneTekstit() {
     return await lueTiedosto(tekstiTiedosto);
 }
 
-module.exports = { haeYksiHuone, haeHuoneTekstit, haeKaikkiHuoneet };
+module.exports = { haeYksiHuone, haeHuoneTekstit };

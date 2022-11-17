@@ -13,6 +13,7 @@ const { haeYksiHuone, haeHuoneTekstit } = require("./palvelin/jsonVarasto/varast
 
 const indexPolku = path.join(__dirname, "index.html");
 
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => res.sendFile(indexPolku));

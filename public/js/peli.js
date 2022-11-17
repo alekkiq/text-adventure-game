@@ -28,27 +28,12 @@ class Pelaaja {
 
 class Peli {
     constructor(TASO) {
+        this.taso = TASO;
         this.pelaaja = new Pelaaja(TASO.pelaajanAlkuHP);
         this.peliLoppu = false;
         //this.huonevarasto = new Huonevarasto(TASO);
-        this.aktiivinenHuone = this.haeHuone(TASO.pelinAloitushuoneenNro);
-        console.log(this.aktiivinenHuone);
+        this.aktiivinenHuone = TASO.pelinAloitushuoneenNro;
         this.edellinenSuunta = null;
-    }
-    async haeHuone(huoneNro) {
-        try {
-            console.log(this.TASO)
-            const data = await fetch(`/huoneet/${huoneNro}`);
-            const huone = await data.json();
-            return huone;
-        }
-        catch (err) {
-            console.log(err);
-        }
-        //console.log(huone);
-    }
-    get TASO() {
-        return this.TASO;
     }
     get voittoTeksti() {
         return TASO.tekstit.voitto;
