@@ -33,8 +33,7 @@
         kyltti = document.getElementById("kyltti");
         // fetch tekstit
         const tekstidata = await fetch(`/tekstit`);
-
-        await haeHuone(1);
+        //await haeHuone(1);
 
         uusiPeli(await tekstidata.json());
         uusi.addEventListener('click', function () {
@@ -44,20 +43,24 @@
 
     async function haeHuone(huoneNro) {
         try {
+            const optiot = {
+                method: "POST",
+                body: JSON.stringify({ numero: huoneNro }),
+                headers: { "Content-Type": "application/json" }
+            };
             const data = await fetch(`/huoneet/${huoneNro}`);
             const haettuHuone = await data.json();
-            if (haettuHuone) {
-                console.log(haettuHuone.huoneteksti)
-                huoneentaulu.textContent = haettuHuone.huoneteksti;
-            }
+            return haettuHuone;
         }
         catch (virhe) {
             console.log(virhe);
         }
     }
 
-    function uusiPeli(TASO) {
+    async function uusiPeli(TASO) {
         peli = new Peli(TASO);
+        huone = await haeHuone(TASO.pelinAloitushuoneenNro);
+
         pohjoinen.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.POHJOINEN); });
         ita.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ITA); });
         etela.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ETELA); });
@@ -71,7 +74,7 @@
 
         naytaPisteet();
         naytaHp();
-        tekijat.textContent = TASO.tekijät;
+        tekijat.textContent = TASO.tekijät.join(", ");
 
         paivitaHuoneenTiedot(peli.haeHuoneenTiedot());
         uusi.textContent = TASO.tekstit.uusiNappi;

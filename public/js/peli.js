@@ -31,11 +31,24 @@ class Peli {
         this.pelaaja = new Pelaaja(TASO.pelaajanAlkuHP);
         this.peliLoppu = false;
         //this.huonevarasto = new Huonevarasto(TASO);
-        this.aktiivinenHuone = TASO.pelinAloitushuoneenNro;
+        this.aktiivinenHuone = this.haeHuone(TASO.pelinAloitushuoneenNro);
+        console.log(this.aktiivinenHuone);
         this.edellinenSuunta = null;
     }
-    get tekijat() {
-        return this.tekijät.join(', ');
+    async haeHuone(huoneNro) {
+        try {
+            console.log(this.TASO)
+            const data = await fetch(`/huoneet/${huoneNro}`);
+            const huone = await data.json();
+            return huone;
+        }
+        catch (err) {
+            console.log(err);
+        }
+        //console.log(huone);
+    }
+    get TASO() {
+        return this.TASO;
     }
     get voittoTeksti() {
         return TASO.tekstit.voitto;
@@ -63,6 +76,7 @@ class Peli {
             LANSI: 4
         };
     }
+
 
     async siirryHuoneeseen(suunta) {
         switch (suunta) {
