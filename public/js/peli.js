@@ -67,7 +67,6 @@ class Peli {
                 if (this.aktiivinenHuone.pohjoinen !== null) {
                     const data = await fetch(`/huoneet/${this.aktiivinenHuone.pohjoinen.huoneeseen}`);
                     this.aktiivinenHuone = await data.json();
-                    console.log(this.aktiivinenHuone)
                     this.edellinenSuunta = Peli.SUUNTA.ETELA;
                 }
 

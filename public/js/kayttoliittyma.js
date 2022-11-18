@@ -33,12 +33,12 @@
         kyltti = document.getElementById("kyltti");
 
         const tekstidata = await fetch(`/tekstit`);
-        const teksti = await tekstidata.json();
-        const data = await fetch(`/huoneet/${teksti.pelinAloitushuoneenNro}`);
+        const tekstidatat = await tekstidata.json();
+        const data = await fetch(`/huoneet/${tekstidatat.pelinAloitushuoneenNro}`);
         const aloitusHuone = await data.json();
 
-        console.log(aloitusHuone, teksti)
-        uusiPeli(aloitusHuone, teksti);
+        console.log(aloitusHuone, tekstidatat)
+        uusiPeli(aloitusHuone, tekstidatat);
 
         uusi.addEventListener('click', function () {
             location.reload();
@@ -47,6 +47,7 @@
 
     async function uusiPeli(aloitusHuone, TASO) {
         peli = new Peli(aloitusHuone, TASO);
+
         //const data = await fetch(`/huoneet/${TASO.pelinAloitushuoneenNro}`);
         //peli.aktiivinenHuone = await data.json();
         //console.log(peli.aktiivinenHuone)
@@ -72,13 +73,14 @@
         uusi.textContent = TASO.tekstit.uusiNappi;
         uusi.setAttribute('class', 'eivalittavissa');
 
-        pohjoinen.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.POHJOINEN); });
-        ita.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ITA); });
-        etela.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ETELA); });
-        lansi.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.LANSI); });
+        pohjoinen.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.POHJOINEN));
+        ita.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.ITA));
+        etela.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.ETELA));
+        lansi.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.LANSI));
     }
 
     function suoritaToiminto(suunta) {
+        console.log(peli.aktiivinenHuone);
         if (peli.peliLoppu) {
             viesti(peli.haeHuoneenTiedot());
             valinnat.innerHTML = "";
