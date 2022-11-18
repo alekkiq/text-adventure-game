@@ -27,19 +27,18 @@ class Pelaaja {
 }
 
 class Peli {
-    constructor(TASO) {
-        this.taso = TASO;
+    constructor(aloitusHuone, TASO) {
+        this.TASO = TASO;
         this.pelaaja = new Pelaaja(TASO.pelaajanAlkuHP);
         this.peliLoppu = false;
-        //this.huonevarasto = new Huonevarasto(TASO);
-        this.aktiivinenHuone = TASO.pelinAloitushuoneenNro;
+        this.aktiivinenHuone = aloitusHuone;
         this.edellinenSuunta = null;
     }
     get voittoTeksti() {
-        return TASO.tekstit.voitto;
+        return this.TASO.tekstit.voitto;
     }
     get tappioteksti() {
-        return TASO.tekstit.tappio;
+        return this.TASO.tekstit.tappio;
     }
     get pohjoinen() {
         return this.aktiivinenHuone.pohjoinen;
@@ -62,13 +61,13 @@ class Peli {
         };
     }
 
-
     async siirryHuoneeseen(suunta) {
         switch (suunta) {
             case Peli.SUUNTA.POHJOINEN:
                 if (this.aktiivinenHuone.pohjoinen !== null) {
                     const data = await fetch(`/huoneet/${this.aktiivinenHuone.pohjoinen.huoneeseen}`);
                     this.aktiivinenHuone = await data.json();
+                    console.log(this.aktiivinenHuone)
                     this.edellinenSuunta = Peli.SUUNTA.ETELA;
                 }
 
@@ -110,17 +109,18 @@ class Peli {
 
     haeHuoneenTiedot() {
         if (this.aktiivinenHuone == null) { //tarkoituksella ==
-            throw new Error(TASO.tekstit.kohtalokasVirhe);
+            throw new Error(this.TASO.tekstit.kohtalokasVirhe);
         }
         if (this.peliLoppu) {
-            return this.pelaajanTappio ? TASO.tekstit.tappio : TASO.tekstit.voitto;
+            return this.pelaajanTappio ? this.TASO.tekstit.tappio : this.TASO.tekstit.voitto;
         }
+        //console.log(this.aktiivinenHuone)
         return this.aktiivinenHuone.huoneteksti + this.haeLisatekstit();
     }
 
     haeLisatekstit() {
         if (this.aktiivinenHuone == null) { //tarkoituksella ==
-            throw new Error(TASO.tekstit.kohtalokasVirhe);
+            throw new Error(this.TASO.tekstit.kohtalokasVirhe);
         }
         let teksti = '';
         if (this.aktiivinenHuone.huonehp !== null) {
@@ -141,22 +141,23 @@ class Peli {
         if (this.aktiivinenHuone.esine !== null) {
             teksti += ' ' + this.aktiivinenHuone.esine.teksti;
         }
+        //console.log(this.aktiivinenHuone)
         return teksti;
     }
 
     get vastustajaTeksti() {
-        return `${TASO.tekstit.kohtaaVastustaja} ${this.aktiivinenHuone.vastustaja.nimi} (HP${this.aktiivinenHuone.vastustaja.hp})`;
+        return `${this.TASO.tekstit.kohtaaVastustaja} ${this.aktiivinenHuone.vastustaja.nimi} (HP${this.aktiivinenHuone.vastustaja.hp})`;
     }
     get avainTeksti() {
         if (this.aktiivinenHuone.avain.numero === 2) {
-            return `${TASO.tekstit.kasaaKaukolippu} ${this.aktiivinenHuone.avain.nimi}`;
+            return `${this.TASO.tekstit.kasaaKaukolippu} ${this.aktiivinenHuone.avain.nimi}`;
         }
         else {
-            return `${TASO.tekstit.otaResurssi} ${this.aktiivinenHuone.avain.nimi}`;
+            return `${this.TASO.tekstit.otaResurssi} ${this.aktiivinenHuone.avain.nimi}`;
         }
     }
     get esineTeksti() {
-        return `${TASO.tekstit.otaResurssi} ${this.aktiivinenHuone.esine.nimi}`;
+        return `${this.TASO.tekstit.otaResurssi} ${this.aktiivinenHuone.esine.nimi}`;
     }
     get huoneessaOnVastustaja() {
         return this.aktiivinenHuone.vastustaja !== null;
@@ -219,7 +220,7 @@ class Peli {
         this.tarkastaKaukolippu();
         let viesti = this.aktiivinenHuone.esine.vaikutus;
         this.aktiivinenHuone.esine = null;
-        if (this.aktiivinenHuone.huoneNro === TASO.pelinLoppuhuoneenNro) {
+        if (this.aktiivinenHuone.huoneNro === this.TASO.pelinLoppuhuoneenNro) {
             this.peliLoppu = true;
         }
         return viesti + " " + this.haeLisatekstit();
@@ -227,14 +228,14 @@ class Peli {
 
     paivitaPisteet(lisays) {
         this.pelaaja.pisteet += Math.abs(lisays);
-        if (this.pelaaja.pisteet % TASO.pisterajaYhdelleHplle)
+        if (this.pelaaja.pisteet % this.TASO.pisterajaYhdelleHplle)
             this.paivitaHp(1);
     }
 
     paivitaHp(muutos) {
         this.pelaaja.hp += muutos;
-        if (this.pelaaja.hp > TASO.pelaajanMaksimiHP) {
-            this.pelaaja.hp = TASO.pelaajanMaksimiHP;
+        if (this.pelaaja.hp > this.TASO.pelaajanMaksimiHP) {
+            this.pelaaja.hp = this.TASO.pelaajanMaksimiHP;
         } else if (this.pelaaja.hp <= 0) {
             this.pelaaja.hp = 0;
         }

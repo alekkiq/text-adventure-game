@@ -8,7 +8,7 @@
     "pelaajanMaksimiHP": 100,
     "pisterajaYhdelleHplle": 50,
     "pelinAloitushuoneenNro": 1,
-    "pelinLoppuhuoneenNro": 1,
+    "pelinLoppuhuoneenNro": 16,
     "tekstit": {
         "pohjoinen": "Pohjoinen",
         "ita": "Itä",
