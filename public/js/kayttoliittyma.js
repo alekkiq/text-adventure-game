@@ -1,5 +1,3 @@
-"use strict";
-
 (function () {
 
     let lansi;
@@ -16,20 +14,20 @@
     let huone;
     let kyltti;
 
-    document.addEventListener('DOMContentLoaded', alustaPeli);
+    document.addEventListener("DOMContentLoaded", alustaPeli);
 
     async function alustaPeli() {
-        huoneentaulu = document.getElementById('huoneentaulu');
-        lansi = document.getElementById('lansi');
-        ita = document.getElementById('ita');
-        pohjoinen = document.getElementById('pohjoinen');
-        etela = document.getElementById('etela');
-        valinnat = document.getElementById('valinnat');
-        pisteAlue = document.getElementById('pisteet');
-        hpAlue = document.getElementById('hp');
-        tekijat = document.getElementById('tekijat');
+        huoneentaulu = document.getElementById("huoneentaulu");
+        pohjoinen = document.getElementById("pohjoinen");
+        ita = document.getElementById("ita");
+        etela = document.getElementById("etela");
+        lansi = document.getElementById("lansi");
+        valinnat = document.getElementById("valinnat");
+        pisteAlue = document.getElementById("pisteet");
+        hpAlue = document.getElementById("hp");
+        tekijat = document.getElementById("tekijat");
         uusi = document.getElementById("uusiPeli");
-        huone = document.getElementById('huone');
+        huone = document.getElementById("huone");
         kyltti = document.getElementById("kyltti");
 
         const tekstidata = await fetch(`/tekstit`);
@@ -37,25 +35,15 @@
         const data = await fetch(`/huoneet/${tekstidatat.pelinAloitushuoneenNro}`);
         const aloitusHuone = await data.json();
 
-        console.log(aloitusHuone, tekstidatat)
         uusiPeli(aloitusHuone, tekstidatat);
 
-        uusi.addEventListener('click', function () {
+        uusi.addEventListener("click", function () {
             location.reload();
         });
     }
 
     async function uusiPeli(aloitusHuone, TASO) {
         peli = new Peli(aloitusHuone, TASO);
-
-        //const data = await fetch(`/huoneet/${TASO.pelinAloitushuoneenNro}`);
-        //peli.aktiivinenHuone = await data.json();
-        //console.log(peli.aktiivinenHuone)
-
-        /*pohjoinen.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.POHJOINEN); });
-        ita.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ITA); });
-        etela.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.ETELA); });
-        lansi.addEventListener('click', () => { suoritaToiminto(Peli.SUUNTA.LANSI); });*/
 
         pohjoinen.textContent = TASO.tekstit.pohjoinen;
         ita.textContent = TASO.tekstit.ita;
@@ -71,24 +59,23 @@
 
         paivitaHuoneenTiedot(peli.haeHuoneenTiedot());
         uusi.textContent = TASO.tekstit.uusiNappi;
-        uusi.setAttribute('class', 'eivalittavissa');
+        uusi.setAttribute("class", "eivalittavissa");
 
-        pohjoinen.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.POHJOINEN));
-        ita.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.ITA));
-        etela.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.ETELA));
-        lansi.addEventListener('click', () => suoritaToiminto(Peli.SUUNTA.LANSI));
+        pohjoinen.addEventListener("click", () => suoritaToiminto(Peli.SUUNTA.POHJOINEN));
+        ita.addEventListener("click", () => suoritaToiminto(Peli.SUUNTA.ITA));
+        etela.addEventListener("click", () => suoritaToiminto(Peli.SUUNTA.ETELA));
+        lansi.addEventListener("click", () => suoritaToiminto(Peli.SUUNTA.LANSI));
     }
 
-    function suoritaToiminto(suunta) {
-        console.log(peli.aktiivinenHuone);
+    async function suoritaToiminto(suunta) {
         if (peli.peliLoppu) {
             viesti(peli.haeHuoneenTiedot());
             valinnat.innerHTML = "";
-            uusi.removeAttribute('class');
+            uusi.removeAttribute("class");
             return;
         }
         try {
-            peli.siirryHuoneeseen(suunta);
+            await peli.siirryHuoneeseen(suunta);
             paivitaHuoneenTiedot(peli.haeHuoneenTiedot());
             naytaPisteet();
             naytaHp();
@@ -99,11 +86,10 @@
     };
 
     function paivitaHuoneenTiedot(teksti) {
-        console.log(teksti)
         try {
             kyltti.textContent = peli.aktiivinenHuone.huonenimi
             huoneentaulu.textContent = teksti;
-            huone.setAttribute('class', 'huone' + peli.aktiivinenHuone.huoneNro);
+            huone.setAttribute("class", "huone" + peli.aktiivinenHuone.huoneNro);
 
             if (!peli.peliLoppu) {
                 paivitaNapit(lansi, peli.lansi);
@@ -114,8 +100,8 @@
             }
             else {
                 napitPois();
-                valinnat.innerHTML = '';
-                uusi.removeAttribute('class');
+                valinnat.innerHTML = "";
+                uusi.removeAttribute("class");
             }
         }
         catch (e) {
@@ -124,8 +110,8 @@
     }
 
     function luoLista(teksti, toiminto) {
-        valinnat.innerHTML = '';
-        let h2 = document.createElement('button');
+        valinnat.innerHTML = "";
+        let h2 = document.createElement("button");
         h2.textContent = teksti;
         h2.onclick = function () {
             let teksti = toiminto();
@@ -160,29 +146,29 @@
                 teksti = peli.tappioteksti;
             }
             else {
-                teksti = peli.voittoTeksti + ' ' + teksti;;
+                teksti = peli.voittoTeksti + " " + teksti;;
             }
         }
         return teksti;
     }
 
     function paivitaLista() {
-        valinnat.innerHTML = '';
+        valinnat.innerHTML = "";
         if (peli.huoneessaOnVastustaja) {
             luoLista(peli.vastustajaTeksti, kamppaile);
             napitPois();
             switch (peli.edellinenSuunta) {
                 case Peli.SUUNTA.POHJOINEN:
-                    pohjoinen.removeAttribute('class');
+                    pohjoinen.removeAttribute("class");
                     break;
                 case Peli.SUUNTA.ITA:
-                    ita.removeAttribute('class');
+                    ita.removeAttribute("class");
                     break;
                 case Peli.SUUNTA.ETELA:
-                    etela.removeAttribute('class');
+                    etela.removeAttribute("class");
                     break;
                 case Peli.SUUNTA.LANSI:
-                    lansi.removeAttribute('class');
+                    lansi.removeAttribute("class");
             }
         }
         else if (peli.huoneessaOnAvain) {
@@ -200,10 +186,10 @@
         hpAlue.textContent = peli.pelaaja.hp;
     }
     function napitPois() {
-        pohjoinen.setAttribute('class', 'eivalittavissa');
-        ita.setAttribute('class', 'eivalittavissa');
-        etela.setAttribute('class', 'eivalittavissa');
-        lansi.setAttribute('class', 'eivalittavissa');
+        pohjoinen.setAttribute("class", "eivalittavissa");
+        ita.setAttribute("class", "eivalittavissa");
+        etela.setAttribute("class", "eivalittavissa");
+        lansi.setAttribute("class", "eivalittavissa");
     }
 
     function viesti(teksti) {
@@ -213,17 +199,17 @@
 
     function paivitaNapit(nappi, ovi) {
         if (ovi === null) {
-            nappi.setAttribute('class', 'eivalittavissa');
+            nappi.setAttribute("class", "eivalittavissa");
         }
         else if (ovi.avain === null) {
-            nappi.setAttribute('class', 'valittavissa');
+            nappi.setAttribute("class", "valittavissa");
         }
         else if (peli.onAvainOveen(ovi)) {
-            nappi.setAttribute('class', 'valittavissa');
+            nappi.setAttribute("class", "valittavissa");
             huoneentaulu.textContent = huoneentaulu.textContent;
         }
         else {
-            nappi.setAttribute('class', 'eivalittavissa');
+            nappi.setAttribute("class", "eivalittavissa");
         }
     }
 

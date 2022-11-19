@@ -34,7 +34,6 @@ app.get("/huoneet/:huoneNro", async (req, res) => {
 app.get("/tekstit", async (req, res) => {
     try {
         const tekstit = await haeHuoneTekstit();
-        //console.log(tekstit.pelaajanAlkuHP)
         res.json(tekstit);
     }
     catch (virhe) {

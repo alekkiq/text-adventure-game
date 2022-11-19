@@ -1,5 +1,3 @@
-"use strict";
-
 /* peli.js  IH 2017*/
 
 /*class Huonevarasto {
@@ -64,7 +62,7 @@ class Peli {
     async siirryHuoneeseen(suunta) {
         switch (suunta) {
             case Peli.SUUNTA.POHJOINEN:
-                if (this.aktiivinenHuone.pohjoinen !== null) {
+                if (this.aktiivinenHuone.pohjoinen != null) {
                     const data = await fetch(`/huoneet/${this.aktiivinenHuone.pohjoinen.huoneeseen}`);
                     this.aktiivinenHuone = await data.json();
                     this.edellinenSuunta = Peli.SUUNTA.ETELA;
