@@ -87,6 +87,7 @@
 
     function paivitaHuoneenTiedot(teksti) {
         try {
+            console.log(peli.aktiivinenHuone);
             kyltti.textContent = peli.aktiivinenHuone.huonenimi
             huoneentaulu.textContent = teksti;
             huone.setAttribute("class", "huone" + peli.aktiivinenHuone.huoneNro);

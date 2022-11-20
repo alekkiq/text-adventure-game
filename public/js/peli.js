@@ -170,6 +170,7 @@ class Peli {
         this.paivitaPisteet(this.aktiivinenHuone.avain.pisteet);
         this.paivitaHp(this.aktiivinenHuone.avain.hp);
         this.pelaaja.avaintasku.set(this.aktiivinenHuone.avain.numero, this.aktiivinenHuone.avain.nimi);
+        //console.log(this.pelaaja.avaintasku);
         let viesti = this.aktiivinenHuone.avain.vaikutus;
         this.aktiivinenHuone.avain = null;
         return viesti + " " + this.haeLisatekstit();
@@ -216,6 +217,8 @@ class Peli {
         }
         this.tarkastaKaukolippu();
         let viesti = this.aktiivinenHuone.esine.vaikutus;
+        this.pelaaja.esinereppu.push(this.aktiivinenHuone.esine);
+        //console.log(this.pelaaja.esinereppu)
         this.aktiivinenHuone.esine = null;
         if (this.aktiivinenHuone.huoneNro === this.TASO.pelinLoppuhuoneenNro) {
             this.peliLoppu = true;
