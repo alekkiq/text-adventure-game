@@ -17,5 +17,3 @@ async function haeHuoneTekstit() {
 }
 
 module.exports = { haeYksiHuone, haeHuoneTekstit };
-
-//haeYksiHuone(2).then(console.log).catch(console.log);
