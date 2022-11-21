@@ -9,7 +9,7 @@ const app = express();
 
 const { port, host } = require("./config.json");
 
-const { haeYksiHuone, haeHuoneTekstit } = require("./palvelin/jsonVarasto/varastoapufunktiot");
+const { haeYksiHuone, haeHuoneTekstit, haeHuoneet } = require("./palvelin/jsonVarasto/varastoapufunktiot");
 
 const indexPolku = path.join(__dirname, "index.html");
 
@@ -29,6 +29,16 @@ app.get("/huoneet/:huoneNro", async (req, res) => {
         res.json({ virhe: virhe.message });
     }
 });
+
+app.get("/huoneet", async (req, res) => {
+    try {
+        const huoneet = await haeHuoneet();
+        res.json(huoneet);
+    }
+    catch (virhe) {
+        res.json({ virhe: virhe.message })
+    }
+})
 
 // Lisätekstit
 app.get("/tekstit", async (req, res) => {

@@ -32,8 +32,8 @@
 
         const tekstidata = await fetch(`/tekstit`);
         const tekstidatat = await tekstidata.json();
-        const data = await fetch(`/huoneet/${tekstidatat.pelinAloitushuoneenNro}`);
-        const aloitusHuone = await data.json();
+        const huonedata = await fetch(`/huoneet/${tekstidatat.pelinAloitushuoneenNro}`);
+        const aloitusHuone = await huonedata.json();
 
         uusiPeli(aloitusHuone, tekstidatat);
 
