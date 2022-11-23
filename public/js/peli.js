@@ -21,6 +21,7 @@ class Pelaaja {
         this.avaintasku = new Map();
         this.esinereppu = [];
         this.kaukolippu = [];
+        this.voitetutVastustajat = [];
     }
 }
 
@@ -157,22 +158,21 @@ class Peli {
         return `${this.TASO.tekstit.otaResurssi} ${this.aktiivinenHuone.esine.nimi}`;
     }
     get huoneessaOnVastustaja() {
-        return this.aktiivinenHuone.vastustaja !== null;
+        return this.aktiivinenHuone.vastustaja !== null && !this.pelaaja.voitetutVastustajat.includes(this.aktiivinenHuone.huoneNro);
     }
     get huoneessaOnAvain() {
-        return this.aktiivinenHuone.avain !== null;
+        return this.aktiivinenHuone.avain !== null && !this.pelaaja.avaintasku.has((this.aktiivinenHuone.avain.numero));
     }
     get huoneessaOnEsine() {
-        return this.aktiivinenHuone.esine !== null;
+        return this.aktiivinenHuone.esine !== null && !this.pelaaja.esinereppu.includes(this.aktiivinenHuone.huoneNro);
     }
 
     tarkastaAvain() {
         this.paivitaPisteet(this.aktiivinenHuone.avain.pisteet);
         this.paivitaHp(this.aktiivinenHuone.avain.hp);
         this.pelaaja.avaintasku.set(this.aktiivinenHuone.avain.numero, this.aktiivinenHuone.avain.nimi);
-        //console.log(this.pelaaja.avaintasku);
         let viesti = this.aktiivinenHuone.avain.vaikutus;
-        this.aktiivinenHuone.avain = null;
+        //this.aktiivinenHuone.avain = null;
         return viesti + " " + this.haeLisatekstit();
     }
 
@@ -200,7 +200,7 @@ class Peli {
             this.paivitaHp(this.aktiivinenHuone.vastustaja.hp);
             this.paivitaPisteet(this.aktiivinenHuone.vastustaja.pisteet);
             let viesti = this.aktiivinenHuone.vastustaja.voittoviesti;
-            this.aktiivinenHuone.vastustaja = null;
+            this.pelaaja.voitetutVastustajat.push(this.aktiivinenHuone.huoneNro);
             return viesti + " " + this.haeLisatekstit();
         } else {
             //pelaajan tappio
@@ -217,9 +217,8 @@ class Peli {
         }
         this.tarkastaKaukolippu();
         let viesti = this.aktiivinenHuone.esine.vaikutus;
-        this.pelaaja.esinereppu.push(this.aktiivinenHuone.esine);
-        //console.log(this.pelaaja.esinereppu)
-        this.aktiivinenHuone.esine = null;
+        this.pelaaja.esinereppu.push(this.aktiivinenHuone.huoneNro);
+
         if (this.aktiivinenHuone.huoneNro === this.TASO.pelinLoppuhuoneenNro) {
             this.peliLoppu = true;
         }

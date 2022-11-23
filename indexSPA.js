@@ -12,6 +12,7 @@ const { port, host } = require("./config.json");
 const { haeYksiHuone, haeHuoneTekstit, haeHuoneet } = require("./palvelin/jsonVarasto/varastoapufunktiot");
 
 const indexPolku = path.join(__dirname, "index.html");
+const kirjautumisPolku = path.join(__dirname, "kirjautuminen.html");
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
