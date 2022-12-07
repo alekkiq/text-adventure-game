@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tekstiseikkailu</title>
+    <meta charset="UTF-8">
+    <link href="testi.css" rel="stylesheet" />
+    <script src="testi.js"></script>
+
+    <link href="//db.onlinewebfonts.com/c/96326733fb4665a821d9fc7a295a750c?family=Korolev+Bold" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body id="huone">
+    <main>
+
+        <h1>Pako pääkaupunkiseudulta</h1>
+        <h2>Peli projekti</h2>
+        <button id="button1" onclick="document.getElementById('id01').style.display='grid'">Kirjaudu sisään</button>
+        <br><br>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/index.html" method="post">
+ 
+    <div class="container">
+      <label for="kayttaja"><b>Käyttäjä</b></label>
+      <input type="text" placeholder="Syötä käyttäjätunnus" name="kayttaja" required>
+
+      <label for="ssana"><b>Salasana</b></label>
+      <input type="password" placeholder="Syötä salasana" name="ssana" required>
+        
+      <button id="button2" type="submit">Kirjaudu sisään</button>
+      <br>
+      <label>
+        <input type="checkbox" checked="checked" name="muista"> Muista minut
+      </label>
+    </div>
+
+    <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Peruuta</button>
+    </div>
+    </main>
+    <footer>Pelimoottori &copy; Leila Hökki<br>
+        Tarina Aleksi Putkonen, Hannes Pallari ja Reino Anipuro</span></footer>
+</body>
+
+</html>
