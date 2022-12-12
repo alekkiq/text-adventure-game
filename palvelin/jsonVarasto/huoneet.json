@@ -3,7 +3,7 @@
         {
             "huonenimi": "Steissi",
             "huoneNro": 1,
-            "huoneteksti": "Tähän tilanteeseen on taas päädytty. Olet Helsingin steissillä. Ympärillä kymmenet ihmiset vilisevät kiireessään seuraavaan junaan tai bussiin, katuesittäjät soittavat harmonikkaa ja kerjäläiset heiluttelevat kuppejaan. Tyypillistä Helsingin keskustaa… Tästä alkaa suuri siis seikkailu! Tehtäväsi on löytää jonkinlainen kaukolippu ja paeta kauhealta pääkaupunkiseudulta. Jatka junaraiteille edetäksesi muihin kaupunginosiin!",
+            "huoneteksti": "Tähän tilanteeseen on taas päädytty. Olet Helsingin steissillä. Ympärillä kymmenet ihmiset vilisevät kiireessään seuraavaan junaan tai bussiin, katuesittäjät soittavat harmonikkaa ja kerjäläiset heiluttelevat kuppejaan. Tyypillistä Helsingin keskustaa… Tästä alkaa suuri seikkailu! Tehtäväsi on löytää jonkinlainen kaukolippu ja paeta kauhealta pääkaupunkiseudulta. Jatka junaraiteille edetäksesi muihin kaupunginosiin!",
             "huonehp": null,
             "pohjoinen": {
                 "huoneeseen": 2,
@@ -22,7 +22,7 @@
         {
             "huonenimi": "Junaraiteet",
             "huoneNro": 2,
-            "huoneteksti": "Saavut aina niin ihanille Helsingin päärautatieaseman junaraiteille. Edessäsi on monia eri vaihtoehtoja jatkaa seikkailussasi. Espoo, Vantaa tai jopa kauhea Itä-Helsinki. Graffiteja jokaisella seinällä, roskia maassa ja uskot jopa näkeväsi elävän rotan. Rakennustyömaidenkin melu on kuin sotatantereella.",
+            "huoneteksti": "Saavut aina niin ihanille Helsingin päärautatieaseman junaraiteille. Edessäsi on monia eri vaihtoehtoja jatkaa seikkailussasi. Espoo, Vantaa tai jopa kauhea Itä-Helsinki. Graffiteja jokaisella seinällä, roskia maassa ja uskot jopa näkeväsi elävän rotan.",
             "huonehp": null,
             "pohjoinen": {
                 "huoneeseen": 3,
